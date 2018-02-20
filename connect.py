@@ -34,7 +34,7 @@ sftp.close()
 
 log_name = get_log_name()
 identity = get_identity()
-stdout = client.exec_command('python /tmp/py_grep.py -{} -{}'.format(log_name, identity))[1]
+stdout = client.exec_command('python /tmp/py_grep.py {} {}'.format(log_name, identity))[1]
 
 for line in stdout:
     print line
