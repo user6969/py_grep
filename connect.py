@@ -1,7 +1,10 @@
+# Creates SSH connection to server
+# Copies py_grep.py to /tmp folder
+# Runs py_grep.py with parameters, i.e. log name, search criteria
+
 import paramiko
 
-
-USERNAME = 'username'
+USERNAME = 'user'
 PASSWORD = 'secret'
 
 
@@ -26,7 +29,7 @@ client.connect(get_ip_address(), username=USERNAME, password=PASSWORD)
 
 
 sftp = client.open_sftp()
-sftp.put(__file__, '/tmp/py_grep.py')
+sftp.put('/source/py_grep.py', '/tmp/py_grep.py')
 sftp.close()
 
 log_name = get_log_name()
